@@ -33,3 +33,19 @@ genderShort varchar(8),
 genderName varchar(256));
 
 insert into gender values (1,'M', 'male');
+
+alter table students drop constraint PK__students__4D11D65C45064CB4;
+
+alter table students drop column studentID;
+
+alter table students add studentID int identity(1000, 1) primary key;
+
+select * from students;
+
+insert into students values ('John', 'Doe', '2000-1-1', 'M', '1', '1234567890', 
+	'doe@place.org', 'math', 1, 3.14, 12, 'Jane', '2023-1-1', '2025-1-1', 'green', 1, 
+	'Fort Dodge', '123-45-6789', 1);
+
+insert into students values ('Jane', 'Smith', '1-1-2000', 'M', '1', '1234567890', 
+	'doe@place.org', 'math', 1, 3.14, 12, 'Jane', '2023-1-1', '2025-1-1', 'green', 1, 
+	'Fort Dodge', '123-45-6789', 1);
